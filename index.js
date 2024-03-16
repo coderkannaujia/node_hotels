@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
-const Person = require("./model/Person");
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
+
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
@@ -24,7 +26,7 @@ app.use('/menuItem' ,menuItemRoutes)
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("sever stated at port no : 3000");
 });
 
